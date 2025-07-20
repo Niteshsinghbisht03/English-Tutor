@@ -13,5 +13,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"message": "English Tutor API is running!"}
+
 # Include routes
 app.include_router(tutor.router, prefix="/api")
